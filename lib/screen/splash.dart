@@ -15,7 +15,7 @@ class SplashScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     Timer(const Duration(seconds: 2), () {
-      Get.to(const Login());
+      Get.to(Login());
     });
     return Scaffold(
       backgroundColor: GlobalColors.primaryColor,
