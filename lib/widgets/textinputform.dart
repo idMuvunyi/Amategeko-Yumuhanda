@@ -18,7 +18,7 @@ class TextInputForm extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: const EdgeInsets.symmetric(vertical: 20),
+      margin: const EdgeInsets.only(bottom: 10),
       padding: const EdgeInsets.only(top: 5),
       height: 55,
       decoration: BoxDecoration(
@@ -30,8 +30,8 @@ class TextInputForm extends StatelessWidget {
       child: TextFormField(
         controller: controller,
         obscureText: obsecure,
-        keyboardType: TextInputType.emailAddress,
-        decoration: const InputDecoration(
+        keyboardType: textInputType,
+        decoration: InputDecoration(
             contentPadding: EdgeInsets.symmetric(horizontal: 10),
             hintText: text,
             hintStyle: TextStyle(color: Colors.grey),
