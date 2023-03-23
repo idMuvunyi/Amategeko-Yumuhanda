@@ -5,11 +5,13 @@ import 'package:flutter/src/widgets/placeholder.dart';
 import '../config/colors.dart';
 import '../widgets/textinputform.dart';
 import '../widgets/button.dart';
+import 'Login.dart';
 import 'package:get/route_manager.dart';
-import 'Register.dart';
 
-class Login extends StatelessWidget {
-  Login({super.key});
+class Register extends StatelessWidget {
+  Register({super.key});
+  final TextEditingController firstnameController = TextEditingController();
+  final TextEditingController lastnameController = TextEditingController();
   final TextEditingController emailController = TextEditingController();
   final TextEditingController passwordController = TextEditingController();
 
@@ -38,12 +40,26 @@ class Login extends StatelessWidget {
               Container(
                 margin: const EdgeInsets.only(top: 60, bottom: 30),
                 child: Text(
-                  'Injira Muri Konti',
+                  'Fungura Konti',
                   style: TextStyle(
                       fontSize: 20,
                       color: GlobalColors.grey,
                       fontWeight: FontWeight.w500),
                 ),
+              ),
+              TextInputForm(
+                controller: firstnameController,
+                text: 'Izina ribanza',
+                obsecure: false,
+                textInputType: TextInputType.text,
+                icon: Icons.account_circle_outlined,
+              ),
+              TextInputForm(
+                controller: lastnameController,
+                text: 'Izina rindi',
+                obsecure: false,
+                textInputType: TextInputType.text,
+                icon: Icons.account_circle_outlined,
               ),
               TextInputForm(
                 controller: emailController,
@@ -69,14 +85,14 @@ class Login extends StatelessWidget {
               Row(
                 children: [
                   Text(
-                    'Ntabwo urafungura konti? ',
+                    'Usanzwe ufite Konti? ',
                     style: TextStyle(color: GlobalColors.grey, fontSize: 15),
                   ),
                   const Spacer(),
                   InkWell(
-                    onTap: () => Get.to(Register()),
+                    onTap: () => Get.to(Login()),
                     child: Text(
-                      'Bikore',
+                      'Injira',
                       style: TextStyle(
                           color: GlobalColors.primaryColor,
                           fontWeight: FontWeight.bold,

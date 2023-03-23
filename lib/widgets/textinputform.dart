@@ -8,18 +8,19 @@ class TextInputForm extends StatelessWidget {
       required this.controller,
       required this.text,
       required this.textInputType,
-      required this.obsecure});
+      required this.obsecure,
+      required this.icon});
 
   final TextEditingController controller;
   final String text;
   final TextInputType textInputType;
   final bool obsecure;
+  final IconData icon;
 
   @override
   Widget build(BuildContext context) {
     return Container(
       margin: const EdgeInsets.only(bottom: 10),
-      padding: const EdgeInsets.only(top: 5),
       height: 55,
       decoration: BoxDecoration(
           color: Colors.white,
@@ -32,10 +33,17 @@ class TextInputForm extends StatelessWidget {
         obscureText: obsecure,
         keyboardType: textInputType,
         decoration: InputDecoration(
-            contentPadding: EdgeInsets.symmetric(horizontal: 10),
+            contentPadding: EdgeInsets.symmetric(horizontal: 10, vertical: 20),
             hintText: text,
             hintStyle: TextStyle(color: Colors.grey),
-            border: InputBorder.none),
+            border: InputBorder.none,
+            prefixIcon: Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Icon(
+                icon,
+                color: GlobalColors.primaryColor,
+              ),
+            )),
       ),
     );
   }

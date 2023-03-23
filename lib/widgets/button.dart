@@ -7,7 +7,7 @@ class ButtonGlobal extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return InkWell(
-      onTap: () => print('Login clicked'),
+      onTap: () => {},
       child: Container(
         alignment: Alignment.center,
         height: 55,
@@ -20,7 +20,7 @@ class ButtonGlobal extends StatelessWidget {
           ],
         ),
         child: Text(
-          'Ohereza',
+          'Injira',
           style: TextStyle(
               color: GlobalColors.white,
               fontSize: 18,
